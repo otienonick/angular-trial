@@ -1,0 +1,9 @@
+button{
+    border-radius: 25px;
+    color: #fff;
+    margin:  10px 0;
+    cursor: pointer;
+}
+.container{
+    background: -webkit-repeating-linear-gradient(red,yellow,green);
+}
