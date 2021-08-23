@@ -1,25 +1,14 @@
-<!-- <h1 appHighlight>My Goals</h1>
-
-<div *ngFor='let goal of goals; let i = index'>
-    <ul>
-      <li appStrikethrough>{{goal.name}} due on {{goal.completeDate | date |uppercase}}</li>  
-        <button (click)='toggleDetails(i)'>Toggle Details</button>
-        <app-goal-detail *ngIf='goal.showDescription' [goal]='goal' (isComplete) = 'deleteGoal($event,i)'></app-goal-detail>
-
-    </ul>
-  </div>
-  <p *ngIf = 'goals.length > 5'>Your goals are too many</p> -->
-
-
   <div class="container">
-    <h1 appHighlight>My Goals</h1>
+    <ng-progress></ng-progress>
+
+    <h1 class="text-center" appHighlight>My Goals</h1>
     <hr>
   
     <div class="row">
       <div class="col-md-6">
         <div *ngFor='let goal of goals;let i = index'>
           <div>
-            <h4 id={{i}} appStrikethrough>{{goal.name}} due on {{goal.completeDate|date|uppercase}}</h4>
+            <h4  appStrikethrough>{{goal.name}} due on {{goal.completeDate|date|uppercase}}</h4>
             <button (click)='toggleDetails(i)' class="btn btn-primary">Toggle Details</button>
           </div>
   
@@ -34,5 +23,10 @@
     </div>
   
     <p *ngIf='goals.length > 5'>You have too many goals</p>
-
+    <div class="row">
+      <blockquote class="blockquote text-center">
+        <p class="mb-0">{{quote.quote}}</p>
+        <footer class="blockquote">~{{quote.author}}</footer>
+      </blockquote>
+    </div>
   </div>
