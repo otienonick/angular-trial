@@ -13,6 +13,9 @@ import { HighlightDirective } from './highlight.directive';
 import { GoalFormComponent } from './goal-form/goal-form.component';
 import { NgProgressModule } from '@ngx-progressbar/core';
 import { NgProgressHttpClientModule } from '@ngx-progressbar/http-client';
+import { AboutComponent } from './about/about.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import { NgProgressHttpClientModule } from '@ngx-progressbar/http-client';
     StrikethroughDirective,
     DateCountPipe,
     HighlightDirective,
-    GoalFormComponent
+    GoalFormComponent,
+    AboutComponent,
+    NavbarComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,

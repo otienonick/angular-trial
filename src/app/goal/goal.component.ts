@@ -16,14 +16,14 @@ import { QuoteRequestService } from '../quote-http/quote-request.service';
   styles:['h1{color:yellow}']
 })
 export class GoalComponent implements OnInit {
-
-  goals: Goal[];
-  alertService:AlertService;
   quote!: Quote;
 
-  constructor(myGoalService:GoalService,alertService:AlertService, private http:HttpClient,private quoteService:QuoteRequestService) {
-    this.goals = myGoalService.getGoals()
-    this.alertService = alertService;
+  goals: Goal[];
+  alertingService:AlertService;
+
+  constructor(myGoalService:GoalService,myalertService:AlertService, private http:HttpClient,private quoteService:QuoteRequestService) {
+    this.goals = myGoalService.getGoals();
+    this.alertingService = myalertService;
 
   }
  
@@ -38,7 +38,7 @@ deleteGoal(isComplete: boolean, index: number){
 
   if (toDelete) {
     this.goals.splice(index,1); 
-    this.alertService.alertMe("The goal has been deleted")
+    this.alertingService.alertMe("The goal has been deleted")
 
    }
  }
@@ -52,22 +52,6 @@ addNewGoal(goal: Goal){
 
 
   ngOnInit() {
-
-
-    //   interface ApiResponse{
-    //     author:string;
-    //     quote:string;
-    //   }
-  
-    //  this.http.get<ApiResponse>("http://quotes.stormconsultancy.co.uk/random.json").subscribe(data=>{
-    //   // Succesful API request
-    //   this.quote = new Quote(data.author, data.quote)
-    // },err=>{
-    //     this.quote = new Quote("Winston Churchill","Never never give up!")
-    //     console.log("An error occurred")
-    // })
-    // }
-  
 
     this.quoteService.quoteRequest()
     this.quote = this.quoteService.quote
