@@ -7,3 +7,6 @@ button{
 .container{
     background: -webkit-repeating-linear-gradient(red,yellow,green);
 }
+.btn{
+    margin:2px;
+  }

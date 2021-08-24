@@ -16,6 +16,8 @@ import { NgProgressHttpClientModule } from '@ngx-progressbar/http-client';
 import { AboutComponent } from './about/about.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ContactComponent } from './contact/contact.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+// import { environment } from './environments/environment';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { ContactComponent } from './contact/contact.component';
     GoalFormComponent,
     AboutComponent,
     NavbarComponent,
-    ContactComponent
+    ContactComponent,
+    NotFoundComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -37,7 +41,6 @@ import { ContactComponent } from './contact/contact.component';
     HttpClientModule,
     NgProgressModule.forRoot(),
     NgProgressHttpClientModule
-
 
   ],
   providers: [],
